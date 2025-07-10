@@ -1,25 +1,22 @@
 using strange.extensions.mediation.impl;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PaddleView : View
 {
     public Transform BallStartPoint;
 
-    [Inject] public InputManager _inputManager { get; private set; }
-    [Inject] public Camera _mainCamera { get; private set; }
+    [Inject] public InputManager InputManager { get; private set; }
     [Inject] public Config Config { get; private set; }
 
     void Start()
     {
-        _inputManager.OnDrag += OnDragHandler;
+        InputManager.OnDrag += OnDragHandler;
     }
 
     void OnDestroy()
     {
-        _inputManager.OnDrag -= OnDragHandler;
+        InputManager.OnDrag -= OnDragHandler;
     }
-
     
     private void OnDragHandler(Vector2 currentPos, Vector2 frameDelta, Vector2 swipeDelta)
     {
@@ -29,7 +26,7 @@ public class PaddleView : View
 
         transform.localPosition = new Vector3(clampedLocalX, transform.localPosition.y, transform.localPosition.z);
     }
-
+    
     void Update()
     {
         float h = Input.GetAxis("Horizontal");

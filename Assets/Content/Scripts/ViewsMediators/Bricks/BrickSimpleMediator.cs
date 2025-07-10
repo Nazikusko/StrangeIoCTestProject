@@ -3,7 +3,7 @@ using strange.extensions.mediation.impl;
 public class BrickSimpleMediator : Mediator
 {
     [Inject] public BrickViewSimple View { get; set; }
-    [Inject] public BrickHitSignal brickHitSignal { get; set; }
+    [Inject] public BrickHitSignal BrickHitSignal { get; set; }
 
     public override void OnRegister()
     {
@@ -12,7 +12,7 @@ public class BrickSimpleMediator : Mediator
 
     private void OnBrickHit(BrickViewBase brick)
     {
-        brickHitSignal.Dispatch(brick);
+        BrickHitSignal.Dispatch(brick);
     }
 
     public override void OnRemove()

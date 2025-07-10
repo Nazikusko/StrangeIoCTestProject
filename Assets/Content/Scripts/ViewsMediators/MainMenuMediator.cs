@@ -2,34 +2,34 @@ using strange.extensions.mediation.impl;
 
 public class MainMenuMediator : Mediator
 {
-    [Inject] public MainMenuView view { get; set; }
-    [Inject] public StartGameSignal startGameSignal { get; set; }
-    [Inject] public ExitGameSignal exitGameSignal { get; set; }
-    [Inject] public PlayerStatsModel playerStatsModel { get; set; }
+    [Inject] public MainMenuView View { get; set; }
+    [Inject] public StartGameSignal StartGameSignal { get; set; }
+    [Inject] public ExitGameSignal ExitGameSignal { get; set; }
+    [Inject] public PlayerStatsModel PlayerStatsModel { get; set; }
 
     public override void OnRegister()
     {
-        view.OnStartGame += StartGame;
-        view.OnExitGame += ExitGame;
-        view.Init();
+        View.OnStartGame += StartGame;
+        View.OnExitGame += ExitGame;
+        View.Init();
 
-        int score = playerStatsModel.MaxScore;
-        view.SetMaxScore(score);
+        int score = PlayerStatsModel.MaxScore;
+        View.SetMaxScore(score);
     }
 
     public override void OnRemove()
     {
-        view.OnStartGame -= StartGame;
-        view.OnExitGame -= ExitGame;
+        View.OnStartGame -= StartGame;
+        View.OnExitGame -= ExitGame;
     }
 
     private void StartGame()
     {
-        startGameSignal.Dispatch();
+        StartGameSignal.Dispatch();
     }
 
     private void ExitGame()
     {
-        exitGameSignal.Dispatch();
+        ExitGameSignal.Dispatch();
     }
 }

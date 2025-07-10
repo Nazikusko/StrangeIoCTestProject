@@ -16,9 +16,7 @@ public class MainMenuContext : MVCSContext
         commandBinder.Bind<ExitGameSignal>().To<ExitGameCommand>();
         
         // Views and Mediators
-        
         mediationBinder.Bind<MainMenuView>().To<MainMenuMediator>();
-
         injectionBinder.Bind<PlayerStatsModel>().ToSingleton();
     }
 }

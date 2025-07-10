@@ -479,9 +479,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7670630f39f6904bba9be217116a38a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startButton: {fileID: 254720992}
-  exitButton: {fileID: 2033507964}
-  maxScoreText: {fileID: 8859677422501438383}
+  _startButton: {fileID: 254720992}
+  _exitButton: {fileID: 2033507964}
+  _maxScoreText: {fileID: 8859677422501438383}
 --- !u!1 &842803228
 GameObject:
   m_ObjectHideFlags: 0

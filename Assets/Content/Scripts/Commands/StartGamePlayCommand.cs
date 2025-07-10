@@ -10,7 +10,7 @@ public class StartGamePlayCommand : Command
     [Inject] public GameContext context { get; private set; }
     [Inject] public GameSpaceObjectsHolder GameSpaceObjectsHolder { get; private set; }
     [Inject] public Config Config { get; private set; }
-    
+
     public override void Execute()
     {
         GameModel.Reset();
@@ -21,8 +21,8 @@ public class StartGamePlayCommand : Command
         {
             GameObject.Destroy(GameModel.PaddleView.gameObject);
         }
-        
-        if(GameModel.BallView != null)
+
+        if (GameModel.BallView != null)
         {
             GameObject.Destroy(GameModel.BallView.gameObject);
         }

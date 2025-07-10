@@ -22,19 +22,6 @@ public class GameRoot : ContextView
         yield return null;
         InputManager.Init(Canvas.GetComponent<GraphicRaycaster>());
 
-        //var puddle = Instantiate(PuddlePrefab, GameSpaceObjectsHolder.PaddleStartPoint.position, Quaternion.identity, GameSpaceObjectsHolder.transform);
-        //context.AddView(puddle);
-
-        //var ball = Instantiate(BallPrefab, puddle.BallStartPoint.position, Quaternion.identity, GameSpaceObjectsHolder.transform);
-        //context.AddView(ball);
-
-        //var bricksSetup = Instantiate(Config.BricksLevelsSetup[0], GameSpaceObjectsHolder.BricksHolder);
-        //bricksSetup.Init();
-        //foreach (var brick in bricksSetup.AllBricks)
-        //{
-        //    context.AddView(brick);
-        //}
-
         var startSignal = ((GameContext)context).injectionBinder.GetInstance<StartGamePlaySignal>();
         startSignal.Dispatch();
     }
